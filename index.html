@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Retro Bollywood Radio</title>
+
+    <meta
+        name="description"
+        content="Emraan Hashmi and Himesh Reshammiya Retro Bollywood Radio"
+    >
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- =====================================
+     NAVIGATION
+===================================== -->
+
+<header class="navbar">
+
+    <a href="#" class="logo">
+        <span class="logo-icon">♪</span>
+
+        <span>
+            RETRO
+            <small>RADIO</small>
+        </span>
+    </a>
+
+    <nav class="nav-links">
+        <a href="#home">Home</a>
+        <a href="#playlists">Playlists</a>
+        <a href="#about">About</a>
+    </nav>
+
+    <button
+        class="nav-button"
+        onclick="document.getElementById('playlists').scrollIntoView()"
+    >
+        Explore Music
+    </button>
+
+</header>
+
+
+<!-- =====================================
+     HERO
+===================================== -->
+
+<section class="hero" id="home">
+
+    <div class="hero-background"></div>
+
+    <div class="hero-overlay"></div>
+
+    <div class="hero-content">
+
+        <div class="eyebrow">
+            90s • 2000s • BOLLYWOOD RETRO RADIO
+        </div>
+
+        <h1>
+            Emraan <span>×</span><br>
+            Himesh Radio
+        </h1>
+
+        <p>
+            A nostalgic Bollywood listening experience inspired by
+            old Indian salons, cassette culture, warm lights and
+            unforgettable romantic melodies.
+        </p>
+
+        <div class="hero-buttons">
+
+            <button
+                class="primary-button"
+                onclick="playCurrentSong()"
+            >
+                <span>▶</span>
+                Start Listening
+            </button>
+
+            <button
+                class="secondary-button"
+                onclick="document.getElementById('playlists').scrollIntoView()"
+            >
+                Browse Playlists
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================
+     PLAYER
+===================================== -->
+
+<section class="player-section">
+
+    <div class="music-player" id="musicPlayer">
+
+        <div class="album-art">
+
+            <div class="album-vinyl">
+                <span>♪</span>
+            </div>
+
+        </div>
+
+
+        <div class="player-info">
+
+            <div class="playing-label">
+                NOW PLAYING
+            </div>
+
+            <h3 id="currentTitle">
+                Select a song
+            </h3>
+
+            <p id="currentArtist">
+                Emraan × Himesh Retro Radio
+            </p>
+
+            <div class="progress-container">
+
+                <span id="currentTime">
+                    0:00
+                </span>
+
+                <div
+                    class="progress-track"
+                    id="progressTrack"
+                >
+                    <div
+                        class="progress-fill"
+                        id="progressFill"
+                    ></div>
+                </div>
+
+                <span id="duration">
+                    0:00
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <div class="player-controls">
+
+            <button
+                class="small-control"
+                id="shuffleButton"
+                title="Shuffle"
+            >
+                🔀
+            </button>
+
+            <button
+                class="small-control"
+                id="previousButton"
+                title="Previous"
+            >
+                ⏮
+            </button>
+
+            <button
+                class="play-button"
+                id="playButton"
+            >
+                ▶
+            </button>
+
+            <button
+                class="small-control"
+                id="nextButton"
+                title="Next"
+            >
+                ⏭
+            </button>
+
+            <button
+                class="small-control"
+                id="repeatButton"
+                title="Repeat"
+            >
+                🔁
+            </button>
+
+        </div>
+
+
+        <div class="volume-area">
+
+            <span>🔊</span>
+
+            <input
+                id="volumeSlider"
+                type="range"
+                min="0"
+                max="1"
+                step="0.01"
+                value="0.8"
+            >
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================
+     MAIN
+===================================== -->
+
+<main>
+
+    <!-- INTRO -->
+
+    <section class="intro-section">
+
+        <div class="intro-grid">
+
+            <div class="intro-card">
+
+                <div class="card-icon">
+                    ♪
+                </div>
+
+                <h3>
+                    Emraan Essentials
+                </h3>
+
+                <p>
+                    Romantic, soulful and atmospheric Bollywood
+                    tracks associated with the unforgettable
+                    Emraan Hashmi era.
+                </p>
+
+            </div>
+
+
+            <div class="intro-card">
+
+                <div class="card-icon">
+                    ♫
+                </div>
+
+                <h3>
+                    Himesh Hits
+                </h3>
+
+                <p>
+                    Iconic melodies, energetic tracks and classic
+                    Himesh Reshammiya songs from the 2000s and beyond.
+                </p>
+
+            </div>
+
+
+            <div class="intro-card">
+
+                <div class="card-icon">
+                    ✦
+                </div>
+
+                <h3>
+                    Retro Atmosphere
+                </h3>
+
+                <p>
+                    Warm wood, golden lights, old-radio aesthetics
+                    and a browser player designed for nostalgia.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- PLAYLISTS -->
+
+    <section
+        class="playlist-section"
+        id="playlists"
+    >
+
+        <div class="section-heading">
+
+            <div class="section-label">
+                THE COLLECTION
+            </div>
+
+            <h2>
+                Explore Retro Music
+            </h2>
+
+            <p>
+                Choose your favorite artist and start listening.
+            </p>
+
+        </div>
+
+
+        <!-- LOCAL AUDIO UPLOAD -->
+
+        <div class="upload-box">
+
+            <div class="upload-icon">
+                🎵
+            </div>
+
+            <div>
+
+                <h3>
+                    Add your own audio
+                </h3>
+
+                <p>
+                    Select MP3/WAV files that you are authorized
+                    to use. They will play directly in this browser.
+                </p>
+
+            </div>
+
+            <label class="upload-button">
+
+                Choose Audio
+
+                <input
+                    type="file"
+                    id="audioUpload"
+                    accept="audio/*"
+                    multiple
+                    hidden
+                >
+
+            </label>
+
+        </div>
+
+
+        <!-- SEARCH -->
+
+        <div class="search-container">
+
+            <span>
+                🔎
+            </span>
+
+            <input
+                type="search"
+                id="searchInput"
+                placeholder="Search songs, movies or artists..."
+            >
+
+        </div>
+
+
+        <!-- TABS -->
+
+        <div class="playlist-tabs">
+
+            <button
+                class="playlist-tab active"
+                id="emraanTab"
+                onclick="switchPlaylist('emraan')"
+            >
+                Emraan Hashmi
+            </button>
+
+            <button
+                class="playlist-tab"
+                id="himeshTab"
+                onclick="switchPlaylist('himesh')"
+            >
+                Himesh Reshammiya
+            </button>
+
+        </div>
+
+
+        <!-- EMRAAN PLAYLIST -->
+
+        <div
+            class="playlist"
+            id="emraanPlaylist"
+        >
+
+            <div class="playlist-heading">
+
+                <div>
+
+                    <span>
+                        EMRAAN RADIO
+                    </span>
+
+                    <h3>
+                        Emraan Hashmi Essentials
+                    </h3>
+
+                    <p>
+                        Romantic • Soulful • Bollywood Classics
+                    </p>
+
+                </div>
+
+                <div
+                    class="song-count"
+                    id="emraanCount"
+                >
+                    0 tracks
+                </div>
+
+            </div>
+
+            <div
+                class="songs"
+                id="emraanSongs"
+            ></div>
+
+        </div>
+
+
+        <!-- HIMESH PLAYLIST -->
+
+        <div
+            class="playlist hidden"
+            id="himeshPlaylist"
+        >
+
+            <div class="playlist-heading">
+
+                <div>
+
+                    <span>
+                        HIMESH RADIO
+                    </span>
+
+                    <h3>
+                        Himesh Reshammiya Hits
+                    </h3>
+
+                    <p>
+                        Melodic • Energetic • 2000s Bollywood
+                    </p>
+
+                </div>
+
+                <div
+                    class="song-count"
+                    id="himeshCount"
+                >
+                    0 tracks
+                </div>
+
+            </div>
+
+            <div
+                class="songs"
+                id="himeshSongs"
+            ></div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ABOUT -->
+
+    <section
+        class="about-section"
+        id="about"
+    >
+
+        <div class="about-content">
+
+            <div class="section-label">
+                THE RADIO STORY
+            </div>
+
+            <h2>
+                Bollywood nostalgia,
+                one song at a time.
+            </h2>
+
+            <p>
+                This radio interface is inspired by the atmosphere
+                of classic Indian neighborhood salons — wooden
+                mirrors, tungsten bulbs, old radios, movie posters
+                and Bollywood songs playing in the background.
+            </p>
+
+            <p>
+                The collection brings together two distinctive
+                musical worlds: the romantic soundtrack universe
+                associated with Emraan Hashmi and the unmistakable
+                melodies of Himesh Reshammiya.
+            </p>
+
+        </div>
+
+
+        <div class="stats-grid">
+
+            <div class="stat-card">
+                <strong>30+</strong>
+                <span>Emraan tracks</span>
+            </div>
+
+            <div class="stat-card">
+                <strong>30+</strong>
+                <span>Himesh tracks</span>
+            </div>
+
+            <div class="stat-card">
+                <strong>24/7</strong>
+                <span>Retro atmosphere</span>
+            </div>
+
+            <div class="stat-card">
+                <strong>100%</strong>
+                <span>Browser based</span>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- FAQ -->
+
+    <section class="faq-section">
+
+        <div class="section-heading">
+
+            <div class="section-label">
+                FAQ
+            </div>
+
+            <h2>
+                Radio, Explained
+            </h2>
+
+        </div>
+
+
+        <div class="faq">
+
+            <details open>
+
+                <summary>
+                    How do I play songs?
+                </summary>
+
+                <p>
+                    Put your authorized audio files inside the
+                    audio folder using the filenames specified in
+                    script.js. You can also click "Choose Audio"
+                    to load your own audio files directly.
+                </p>
+
+            </details>
+
+
+            <details>
+
+                <summary>
+                    Why aren't commercial songs included?
+                </summary>
+
+                <p>
+                    Commercial Bollywood recordings are copyrighted.
+                    This template therefore does not distribute
+                    unauthorized MP3 files. Use audio that you own,
+                    have licensed, or otherwise have permission to play.
+                </p>
+
+            </details>
+
+
+            <details>
+
+                <summary>
+                    Does the player work on mobile?
+                </summary>
+
+                <p>
+                    Yes. The interface is responsive and uses the
+                    browser's native audio playback engine.
+                </p>
+
+            </details>
+
+
+            <details>
+
+                <summary>
+                    Can I add more artists?
+                </summary>
+
+                <p>
+                    Yes. Add another playlist array in script.js
+                    and connect it to another playlist tab.
+                </p>
+
+            </details>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<!-- =====================================
+     FOOTER
+===================================== -->
+
+<footer>
+
+    <div class="footer-logo">
+        दिल से • Retro Radio
+    </div>
+
+    <div class="footer-links">
+        <a href="#home">Home</a>
+        <a href="#playlists">Playlists</a>
+        <a href="#about">About</a>
+    </div>
+
+    <p>
+        Emraan × Himesh • Bollywood Retro Radio
+    </p>
+
+</footer>
+
+
+<!-- =====================================
+     AUDIO ENGINE
+===================================== -->
+
+<audio
+    id="audioPlayer"
+    preload="metadata"
+></audio>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>

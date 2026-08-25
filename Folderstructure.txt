@@ -1,0 +1,11 @@
+deluxe-saloon/
+├── index.html
+├── style.css
+├── script.js
+└── audio/
+    ├── emraan-01.mp3
+    ├── emraan-02.mp3
+    ├── emraan-03.mp3
+    ├── himesh-01.mp3
+    ├── himesh-02.mp3
+    └── himesh-03.mp3
